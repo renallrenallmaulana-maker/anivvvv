@@ -1,0 +1,1858 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>4 Tahun — Cerita Kita</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --bg:#0b0b0d;
+    --bg2:#111114;
+    --text:#f5f2ee;
+    --muted:#9d9996;
+    --line:rgba(255,255,255,.12);
+    --accent:#d8c2b0;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:"DM Sans",sans-serif;
+    overflow-x:hidden;
+}
+
+body.locked{
+    overflow:hidden;
+}
+
+/* =========================
+   OPENING
+========================= */
+
+.opening{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    background:#08080a;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:1.2s cubic-bezier(.77,0,.18,1);
+}
+
+.opening.hide{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+}
+
+.opening-inner{
+    text-align:center;
+    padding:30px;
+}
+
+.mini{
+    color:#aaa;
+    font-size:10px;
+    letter-spacing:5px;
+    text-transform:uppercase;
+    margin-bottom:28px;
+}
+
+.roman{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(100px,22vw,210px);
+    line-height:.8;
+    color:#eee9e4;
+}
+
+.opening-title{
+    margin-top:35px;
+    font-family:"Playfair Display",serif;
+    font-style:italic;
+    font-size:clamp(22px,4vw,36px);
+}
+
+.opening-sub{
+    margin-top:12px;
+    color:#777;
+    font-size:12px;
+    letter-spacing:2px;
+}
+
+.open-btn{
+    margin-top:42px;
+    background:transparent;
+    border:1px solid rgba(255,255,255,.3);
+    color:white;
+    padding:15px 28px;
+    border-radius:100px;
+    cursor:pointer;
+    letter-spacing:2px;
+    font-size:10px;
+    text-transform:uppercase;
+    transition:.4s;
+}
+
+.open-btn:hover{
+    background:white;
+    color:#111;
+    transform:translateY(-3px);
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:100;
+    padding:24px 6vw;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:linear-gradient(
+        to bottom,
+        rgba(0,0,0,.65),
+        transparent
+    );
+}
+
+.logo{
+    font-family:"Playfair Display",serif;
+    font-size:20px;
+}
+
+.nav-right{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.nav-link{
+    color:#aaa;
+    text-decoration:none;
+    font-size:10px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.music{
+    border:1px solid var(--line);
+    background:rgba(0,0,0,.25);
+    color:white;
+    border-radius:100px;
+    padding:9px 15px;
+    cursor:pointer;
+    font-size:10px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+    position:relative;
+    display:flex;
+    align-items:flex-end;
+    padding:0 7vw 11vh;
+    overflow:hidden;
+}
+
+.hero-bg{
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        to top,
+        #0b0b0d 2%,
+        rgba(11,11,13,.3) 55%,
+        rgba(11,11,13,.25)
+    ),
+    url("https://cdn.imagetourls.com/uploads/tyImg/Tyd75rIm.jpg")
+    center/cover;
+
+    filter:brightness(.68);
+    transform:scale(1.03);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:850px;
+}
+
+.eyebrow{
+    color:#aaa;
+    text-transform:uppercase;
+    letter-spacing:5px;
+    font-size:10px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-family:"Playfair Display",serif;
+    font-weight:400;
+    font-size:clamp(65px,12vw,150px);
+    line-height:.85;
+}
+
+.hero h1 em{
+    font-weight:400;
+}
+
+.hero-desc{
+    max-width:470px;
+    margin-top:30px;
+    color:#b2aeaa;
+    line-height:1.8;
+    font-size:14px;
+}
+
+
+/* =========================
+   GENERAL
+========================= */
+
+section{
+    padding:140px 7vw;
+}
+
+.section-top{
+    display:flex;
+    justify-content:space-between;
+    gap:30px;
+    margin-bottom:70px;
+}
+
+.section-number{
+    font-size:10px;
+    color:#777;
+    letter-spacing:3px;
+}
+
+.section-title{
+    font-family:"Playfair Display",serif;
+    font-weight:400;
+    font-size:clamp(42px,7vw,90px);
+    line-height:1;
+}
+
+.section-title em{
+    color:#a99b91;
+}
+
+.section-description{
+    max-width:340px;
+    color:#888;
+    line-height:1.8;
+    font-size:13px;
+}
+
+
+/* =========================
+   COUNTER
+========================= */
+
+.counter-section{
+    background:#101012;
+}
+
+.counter{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+}
+
+.counter-item{
+    padding:50px 20px;
+    text-align:center;
+    border-right:1px solid var(--line);
+}
+
+.counter-item:last-child{
+    border-right:0;
+}
+
+.counter-number{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(40px,6vw,75px);
+}
+
+.counter-label{
+    color:#777;
+    margin-top:10px;
+    font-size:10px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+
+/* =========================
+   TIMELINE
+========================= */
+
+.timeline{
+    max-width:900px;
+    margin:auto;
+}
+
+.story{
+    display:grid;
+    grid-template-columns:100px 1fr;
+    border-top:1px solid var(--line);
+    padding:45px 0;
+}
+
+.story-year{
+    color:#777;
+    font-size:12px;
+    letter-spacing:2px;
+}
+
+.story h3{
+    font-family:"Playfair Display",serif;
+    font-size:32px;
+    font-weight:400;
+    margin-bottom:15px;
+}
+
+.story p{
+    color:#888;
+    line-height:1.8;
+    max-width:600px;
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(12,1fr);
+    gap:16px;
+}
+
+.photo{
+    position:relative;
+    overflow:hidden;
+    cursor:pointer;
+    background:#151517;
+}
+
+.photo:nth-child(1){
+    grid-column:span 7;
+    height:550px;
+}
+
+.photo:nth-child(2){
+    grid-column:span 5;
+    height:550px;
+}
+
+.photo:nth-child(3){
+    grid-column:span 4;
+    height:430px;
+}
+
+.photo:nth-child(4){
+    grid-column:span 8;
+    height:430px;
+}
+
+.photo:nth-child(5){
+    grid-column:span 5;
+    height:500px;
+}
+
+.photo:nth-child(6){
+    grid-column:span 7;
+    height:500px;
+}
+
+.photo:nth-child(7){
+    grid-column:span 7;
+    height:500px;
+}
+
+.photo:nth-child(8){
+    grid-column:span 5;
+    height:500px;
+}
+
+.photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:1s cubic-bezier(.2,.7,.2,1);
+    filter:saturate(.82);
+}
+
+.photo:hover img{
+    transform:scale(1.06);
+    filter:saturate(1);
+}
+
+.photo::after{
+    content:"lihat";
+    position:absolute;
+    bottom:18px;
+    right:18px;
+    border:1px solid rgba(255,255,255,.4);
+    padding:7px 12px;
+    border-radius:100px;
+    font-size:9px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    opacity:0;
+    transition:.4s;
+}
+
+.photo:hover::after{
+    opacity:1;
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter-section{
+    background:#101012;
+    text-align:center;
+}
+
+.envelope{
+    width:min(500px,90vw);
+    height:310px;
+    margin:70px auto 0;
+    position:relative;
+    background:#e7dfd6;
+    color:#1b1918;
+    cursor:pointer;
+    box-shadow:0 30px 80px rgba(0,0,0,.35);
+    transition:.5s;
+}
+
+.envelope:hover{
+    transform:translateY(-8px);
+}
+
+.envelope::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+
+    border-left:250px solid transparent;
+    border-right:250px solid transparent;
+    border-top:150px solid #d4c9bd;
+
+    transform-origin:top;
+    transition:.7s;
+
+    z-index:3;
+}
+
+.envelope.open::before{
+    transform:rotateX(180deg);
+}
+
+.envelope-word{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-family:"Playfair Display",serif;
+    font-style:italic;
+    font-size:27px;
+}
+
+.letter-hint{
+    margin-top:25px;
+    color:#777;
+    font-size:10px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+.modal{
+    position:fixed;
+    inset:0;
+    z-index:500;
+
+    background:rgba(0,0,0,.8);
+    backdrop-filter:blur(15px);
+
+    display:none;
+    align-items:center;
+    justify-content:center;
+
+    padding:25px;
+}
+
+.modal.active{
+    display:flex;
+}
+
+.letter-card{
+    width:min(700px,100%);
+    max-height:85vh;
+    overflow:auto;
+
+    background:#eee8e1;
+    color:#222;
+
+    padding:55px;
+
+    position:relative;
+}
+
+.close{
+    position:absolute;
+    right:20px;
+    top:20px;
+
+    border:0;
+    background:none;
+
+    font-size:25px;
+    cursor:pointer;
+}
+
+.letter-card .small{
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-size:9px;
+    color:#777;
+}
+
+.letter-card h2{
+    font-family:"Playfair Display",serif;
+    font-size:45px;
+    font-weight:400;
+
+    margin:20px 0 30px;
+}
+
+.letter-card p{
+    line-height:2;
+    font-size:14px;
+    color:#4c4845;
+
+    margin-bottom:20px;
+}
+
+.signature{
+    margin-top:35px;
+
+    font-family:"Playfair Display",serif;
+    font-style:italic;
+    font-size:27px;
+}
+
+
+/* =========================
+   IMAGE VIEWER
+========================= */
+
+.viewer{
+    position:fixed;
+    inset:0;
+    z-index:700;
+
+    background:rgba(0,0,0,.96);
+
+    display:none;
+    align-items:center;
+    justify-content:center;
+
+    padding:30px;
+}
+
+.viewer.active{
+    display:flex;
+}
+
+.viewer img{
+    max-width:95%;
+    max-height:90vh;
+    object-fit:contain;
+}
+
+.viewer-close{
+    position:absolute;
+    top:25px;
+    right:30px;
+
+    color:white;
+    font-size:30px;
+    cursor:pointer;
+}
+
+
+/* =========================
+   FINAL
+========================= */
+
+.final{
+    min-height:80vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+}
+
+.final h2{
+    font-family:"Playfair Display",serif;
+    font-weight:400;
+
+    font-size:clamp(60px,11vw,150px);
+
+    line-height:.85;
+}
+
+.final h2 em{
+    display:block;
+    color:#9f948b;
+}
+
+.final p{
+    color:#777;
+
+    margin-top:35px;
+
+    font-size:12px;
+    letter-spacing:3px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    padding:40px 7vw;
+
+    border-top:1px solid var(--line);
+
+    display:flex;
+    justify-content:space-between;
+
+    color:#666;
+
+    font-size:10px;
+    letter-spacing:2px;
+}
+
+
+/* =========================
+   REVEAL
+========================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(35px);
+
+    transition:1s ease;
+}
+
+.reveal.show{
+    opacity:1;
+    transform:none;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px){
+
+    nav{
+        padding:18px 5vw;
+    }
+
+    .nav-link{
+        display:none;
+    }
+
+    section{
+        padding:100px 5vw;
+    }
+
+    .hero{
+        padding:0 5vw 9vh;
+    }
+
+    .counter{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .counter-item{
+        border-bottom:1px solid var(--line);
+    }
+
+    .section-top{
+        display:block;
+    }
+
+    .section-description{
+        margin-top:25px;
+    }
+
+    .story{
+        grid-template-columns:60px 1fr;
+    }
+
+    .story h3{
+        font-size:26px;
+    }
+
+    .gallery{
+        display:grid;
+        grid-template-columns:1fr;
+    }
+
+    .photo,
+    .photo:nth-child(n){
+        grid-column:span 1;
+        height:430px;
+    }
+
+    .envelope{
+        height:240px;
+    }
+
+    .envelope::before{
+        border-left-width:45vw;
+        border-right-width:45vw;
+        border-top-width:120px;
+    }
+
+    .letter-card{
+        padding:35px 25px;
+    }
+
+    footer{
+        display:block;
+        line-height:2;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body class="locked">
+
+
+<!-- =========================
+     OPENING
+========================= -->
+
+<div class="opening" id="opening">
+
+    <div class="opening-inner">
+
+        <div class="mini">
+            sedikit arsip tentang kita
+        </div>
+
+        <div class="roman">
+            IV
+        </div>
+
+        <div class="opening-title">
+            4 tahun, masih kita.
+        </div>
+
+        <div class="opening-sub">
+            25 SEPTEMBER 2022 — 25 SEPTEMBER 2026
+        </div>
+
+        <button class="open-btn" id="openBtn">
+            Buka Cerita Kita
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     NAV
+========================= -->
+
+<nav>
+
+    <div class="logo">
+        kita.
+    </div>
+
+    <div class="nav-right">
+
+        <a href="#memories" class="nav-link">
+            kenangan
+        </a>
+
+        <a href="#letter" class="nav-link">
+            surat
+        </a>
+
+        <button class="music" id="musicBtn">
+            ♫ musik
+        </button>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     AUDIO
+========================= -->
+
+<audio id="music" loop preload="auto">
+
+    <source
+        src="https://files.catbox.moe/1xvm0m.mp4"
+        type="audio/mp4">
+
+</audio>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-bg"></div>
+
+    <div class="hero-content reveal">
+
+        <div class="eyebrow">
+            bab keempat
+        </div>
+
+        <h1>
+            4<br>
+            <em>Tahun.</em>
+        </h1>
+
+        <p class="hero-desc">
+            Empat tahun mungkin cuma terdengar seperti
+            sebuah angka. Tapi bagi kita, empat tahun
+            adalah ribuan percakapan, tawa kecil,
+            hari-hari biasa, dan banyak cerita yang
+            hanya kita berdua yang tahu.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     COUNTER
+========================= -->
+
+<section class="counter-section">
+
+    <div class="section-top reveal">
+
+        <div>
+
+            <div class="section-number">
+                01 / WAKTU
+            </div>
+
+            <h2 class="section-title">
+                lihat sudah<br>
+                sejauh apa kita <em>berjalan.</em>
+            </h2>
+
+        </div>
+
+        <p class="section-description">
+            Waktu terus berjalan, tapi beberapa hal
+            justru terasa semakin berarti karena
+            kita menjalaninya bersama.
+        </p>
+
+    </div>
+
+
+    <div class="counter reveal">
+
+        <div class="counter-item">
+
+            <div class="counter-number" id="years">
+                4
+            </div>
+
+            <div class="counter-label">
+                Tahun
+            </div>
+
+        </div>
+
+
+        <div class="counter-item">
+
+            <div class="counter-number" id="days">
+                0
+            </div>
+
+            <div class="counter-label">
+                Hari
+            </div>
+
+        </div>
+
+
+        <div class="counter-item">
+
+            <div class="counter-number" id="hours">
+                0
+            </div>
+
+            <div class="counter-label">
+                Jam
+            </div>
+
+        </div>
+
+
+        <div class="counter-item">
+
+            <div class="counter-number" id="minutes">
+                0
+            </div>
+
+            <div class="counter-label">
+                Menit
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CERITA
+========================= -->
+
+<section>
+
+    <div class="section-top reveal">
+
+        <div>
+
+            <div class="section-number">
+                02 / CERITA
+            </div>
+
+            <h2 class="section-title">
+                potongan<br>
+                <em>cerita kita.</em>
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="timeline">
+
+
+        <div class="story reveal">
+
+            <div class="story-year">
+                01
+            </div>
+
+            <div>
+
+                <h3>
+                    Awalnya.
+                </h3>
+
+                <p>
+                    Ada satu titik di mana semuanya bermula.
+                    Waktu itu mungkin kita belum tahu
+                    sejauh apa perjalanan ini akan membawa kita.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="story reveal">
+
+            <div class="story-year">
+                02
+            </div>
+
+            <div>
+
+                <h3>
+                    Tumbuh bersama.
+                </h3>
+
+                <p>
+                    Kita berubah, belajar, dan tumbuh.
+                    Tidak selalu dalam keadaan sempurna,
+                    tapi selalu ada alasan untuk terus
+                    berjalan bersama.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="story reveal">
+
+            <div class="story-year">
+                03
+            </div>
+
+            <div>
+
+                <h3>
+                    Hal-hal kecil.
+                </h3>
+
+                <p>
+                    Percakapan random, candaan yang cuma
+                    kita mengerti, hari-hari sederhana,
+                    sampai momen kecil yang akhirnya
+                    menjadi kenangan besar.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="story reveal">
+
+            <div class="story-year">
+                04
+            </div>
+
+            <div>
+
+                <h3>
+                    Masih di sini.
+                </h3>
+
+                <p>
+                    Empat tahun kemudian, ternyata masih
+                    ada banyak cerita yang belum selesai.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOTO
+========================= -->
+
+<section id="memories">
+
+    <div class="section-top reveal">
+
+        <div>
+
+            <div class="section-number">
+                03 / KENANGAN
+            </div>
+
+            <h2 class="section-title">
+                momen yang<br>
+                <em>layak disimpan.</em>
+            </h2>
+
+        </div>
+
+        <p class="section-description">
+            Delapan foto.
+            Delapan potongan kecil dari perjalanan
+            yang jauh lebih panjang.
+        </p>
+
+    </div>
+
+
+    <div class="gallery">
+
+
+        <div class="photo reveal">
+
+            <img
+                src="https://cdn.imagetourls.com/uploads/tyImg/Tyd75rIm.jpg"
+                alt="Kenangan 1">
+
+        </div>
+
+
+        <div class="photo reveal">
+
+            <img
+                src="https://cdn.imagetourls.com/uploads/tyImg/PnKgt3hR.jpg"
+                alt="Kenangan 2">
+
+        </div>
+
+
+        <div class="photo reveal">
+
+            <img
+                src="https://cdn.imagetourls.com/uploads/tyImg/VJqvDahF.jpg"
+                alt="Kenangan 3">
+
+        </div>
+
+
+        <div class="photo reveal">
+
+            <img
+                src="https://cdn.imagetourls.com/uploads/tyImg/1gj4kACVt.jpg"
+                alt="Kenangan 4">
+
+        </div>
+
+
+        <div class="photo reveal">
+
+            <img
+                src="https://cdn.imagetourls.com/uploads/tyImg/nldoPgO3.jpg"
+                alt="Kenangan 5">
+
+        </div>
+
+
+        <div class="photo reveal">
+
+            <img
+                src="https://cdn.imagetourls.com/uploads/tyImg/2HmkBvPh.jpg"
+                alt="Kenangan 6">
+
+        </div>
+
+
+        <div class="photo reveal">
+
+            <img
+                src="https://cdn.imagetourls.com/uploads/tyImg/OuwsvaWl.jpg"
+                alt="Kenangan 7">
+
+        </div>
+
+
+        <div class="photo reveal">
+
+            <img
+                src="https://cdn.imagetourls.com/uploads/tyImg/1fYlOAVZd.jpg"
+                alt="Kenangan 8">
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SURAT
+========================= -->
+
+<section class="letter-section" id="letter">
+
+    <div class="reveal">
+
+        <div class="section-number">
+            04 / SEBUAH SURAT
+        </div>
+
+        <h2 class="section-title">
+            sesuatu yang<br>
+            <em>ingin kusampaikan.</em>
+        </h2>
+
+        <p
+            class="section-description"
+            style="margin:25px auto 0;"
+        >
+            Ada beberapa hal yang rasanya lebih mudah
+            ditulis daripada diucapkan.
+        </p>
+
+    </div>
+
+
+    <div
+        class="envelope reveal"
+        id="envelope"
+    >
+
+        <div class="envelope-word">
+            buka ini.
+        </div>
+
+    </div>
+
+
+    <div class="letter-hint">
+        tekan amplopnya
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FINAL
+========================= -->
+
+<section class="final">
+
+    <div class="reveal">
+
+        <div class="section-number">
+            25 SEPTEMBER 2026
+        </div>
+
+        <h2>
+            Masih
+            <em>kamu.</em>
+        </h2>
+
+        <p>
+            4 tahun berlalu,
+            dan ceritanya masih berlanjut.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <span>
+        4 TAHUN • CERITA KITA
+    </span>
+
+    <span>
+        25 SEPTEMBER 2022 — 25 SEPTEMBER 2026
+    </span>
+
+</footer>
+
+
+<!-- =========================
+     MODAL SURAT
+========================= -->
+
+<div
+    class="modal"
+    id="letterModal"
+>
+
+    <div class="letter-card">
+
+        <button
+            class="close"
+            id="closeLetter"
+        >
+            ×
+        </button>
+
+
+        <div class="small">
+            sebuah surat untukmu
+        </div>
+
+
+        <h2>
+            4 tahun.
+        </h2>
+
+
+        <p>
+            Kalau ada satu hal yang aku pelajari selama
+            perjalanan ini, mungkin itu adalah bagaimana
+            seseorang bisa perlahan menjadi bagian dari
+            begitu banyak hal dalam hidup kita.
+        </p>
+
+
+        <p>
+            Empat tahun bukan cuma tentang berapa lama
+            kita bersama. Ada banyak hari yang kita lewati,
+            banyak cerita yang kita buat, dan banyak hal
+            kecil yang mungkin terlihat sederhana,
+            tapi ternyata berarti.
+        </p>
+
+
+        <p>
+            Terima kasih sudah menjadi bagian dari cerita
+            ini. Terima kasih untuk tawa, percakapan,
+            perhatian, dan semua momen yang membuat
+            perjalanan ini menjadi sesuatu yang layak
+            dikenang.
+        </p>
+
+
+        <p>
+            Aku tidak tahu persis seperti apa halaman
+            berikutnya. Tapi aku tahu satu hal:
+            aku masih ingin melihat cerita ini terus
+            berjalan.
+        </p>
+
+
+        <p>
+            Selamat 4 tahun.
+            Semoga setelah halaman ini masih ada
+            banyak halaman lain yang bisa kita isi.
+        </p>
+
+
+        <div class="signature">
+
+            selalu,
+            <br>
+            aku.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     FULLSCREEN FOTO
+========================= -->
+
+<div
+    class="viewer"
+    id="viewer"
+>
+
+    <div
+        class="viewer-close"
+        id="viewerClose"
+    >
+        ×
+    </div>
+
+
+    <img
+        id="viewerImage"
+        src=""
+        alt="Kenangan"
+    >
+
+</div>
+
+
+<script>
+
+/* =================================
+   TANGGAL JADIAN
+================================= */
+
+const startDate =
+    new Date("2022-09-25T00:00:00");
+
+
+/* ELEMENT */
+
+const opening =
+    document.getElementById("opening");
+
+const openBtn =
+    document.getElementById("openBtn");
+
+const music =
+    document.getElementById("music");
+
+const musicBtn =
+    document.getElementById("musicBtn");
+
+const envelope =
+    document.getElementById("envelope");
+
+const letterModal =
+    document.getElementById("letterModal");
+
+const closeLetter =
+    document.getElementById("closeLetter");
+
+const viewer =
+    document.getElementById("viewer");
+
+const viewerImage =
+    document.getElementById("viewerImage");
+
+const viewerClose =
+    document.getElementById("viewerClose");
+
+
+/* =================================
+   BUKA WEBSITE + MUSIK
+================================= */
+
+openBtn.addEventListener(
+    "click",
+    async () => {
+
+        opening.classList.add("hide");
+
+        document.body.classList.remove(
+            "locked"
+        );
+
+
+        try{
+
+            await music.play();
+
+            musicBtn.textContent =
+                "♫ sedang diputar";
+
+        }catch(error){
+
+            musicBtn.textContent =
+                "♫ musik";
+
+            console.log(
+                "Audio tidak dapat diputar:",
+                error
+            );
+
+        }
+
+    }
+);
+
+
+/* =================================
+   TOMBOL MUSIK
+================================= */
+
+musicBtn.addEventListener(
+    "click",
+    async () => {
+
+        if(music.paused){
+
+            try{
+
+                await music.play();
+
+                musicBtn.textContent =
+                    "♫ sedang diputar";
+
+            }catch(error){
+
+                console.log(error);
+
+            }
+
+        }else{
+
+            music.pause();
+
+            musicBtn.textContent =
+                "♫ musik";
+
+        }
+
+    }
+);
+
+
+/* =================================
+   COUNTER
+================================= */
+
+function updateCounter(){
+
+    const now =
+        new Date();
+
+    const diff =
+        now - startDate;
+
+    if(diff < 0) return;
+
+
+    const totalMinutes =
+        Math.floor(
+            diff / 60000
+        );
+
+
+    const totalHours =
+        Math.floor(
+            diff / 3600000
+        );
+
+
+    const totalDays =
+        Math.floor(
+            diff / 86400000
+        );
+
+
+    let years =
+        now.getFullYear() -
+        startDate.getFullYear();
+
+
+    const anniversary =
+        new Date(
+            now.getFullYear(),
+            startDate.getMonth(),
+            startDate.getDate()
+        );
+
+
+    if(now < anniversary){
+
+        years--;
+
+    }
+
+
+    document.getElementById(
+        "years"
+    ).textContent =
+        Math.max(years,0);
+
+
+    document.getElementById(
+        "days"
+    ).textContent =
+        totalDays.toLocaleString(
+            "id-ID"
+        );
+
+
+    document.getElementById(
+        "hours"
+    ).textContent =
+        totalHours.toLocaleString(
+            "id-ID"
+        );
+
+
+    document.getElementById(
+        "minutes"
+    ).textContent =
+        totalMinutes.toLocaleString(
+            "id-ID"
+        );
+
+}
+
+
+updateCounter();
+
+setInterval(
+    updateCounter,
+    60000
+);
+
+
+/* =================================
+   AMPLOP
+================================= */
+
+envelope.addEventListener(
+    "click",
+    () => {
+
+        envelope.classList.add(
+            "open"
+        );
+
+
+        setTimeout(
+            () => {
+
+                letterModal.classList.add(
+                    "active"
+                );
+
+            },
+            450
+        );
+
+    }
+);
+
+
+/* =================================
+   TUTUP SURAT
+================================= */
+
+closeLetter.addEventListener(
+    "click",
+    () => {
+
+        letterModal.classList.remove(
+            "active"
+        );
+
+    }
+);
+
+
+letterModal.addEventListener(
+    "click",
+    (e) => {
+
+        if(e.target === letterModal){
+
+            letterModal.classList.remove(
+                "active"
+            );
+
+        }
+
+    }
+);
+
+
+/* =================================
+   FOTO FULLSCREEN
+================================= */
+
+document
+.querySelectorAll(".photo img")
+.forEach(
+    img => {
+
+        img.addEventListener(
+            "click",
+            () => {
+
+                viewerImage.src =
+                    img.src;
+
+                viewer.classList.add(
+                    "active"
+                );
+
+                document.body.classList.add(
+                    "locked"
+                );
+
+            }
+        );
+
+    }
+);
+
+
+viewerClose.addEventListener(
+    "click",
+    closeViewer
+);
+
+
+viewer.addEventListener(
+    "click",
+    (e) => {
+
+        if(e.target === viewer){
+
+            closeViewer();
+
+        }
+
+    }
+);
+
+
+function closeViewer(){
+
+    viewer.classList.remove(
+        "active"
+    );
+
+    document.body.classList.remove(
+        "locked"
+    );
+
+    viewerImage.src = "";
+
+}
+
+
+/* =================================
+   ESCAPE
+================================= */
+
+document.addEventListener(
+    "keydown",
+    (e) => {
+
+        if(e.key === "Escape"){
+
+            letterModal.classList.remove(
+                "active"
+            );
+
+            closeViewer();
+
+        }
+
+    }
+);
+
+
+/* =================================
+   ANIMASI SCROLL
+================================= */
+
+const reveals =
+    document.querySelectorAll(
+        ".reveal"
+    );
+
+
+const observer =
+    new IntersectionObserver(
+
+        entries => {
+
+            entries.forEach(
+                entry => {
+
+                    if(
+                        entry.isIntersecting
+                    ){
+
+                        entry.target.classList.add(
+                            "show"
+                        );
+
+                    }
+
+                }
+            );
+
+        },
+
+        {
+            threshold:.12
+        }
+
+    );
+
+
+reveals.forEach(
+    element => {
+
+        observer.observe(
+            element
+        );
+
+    }
+);
+
+
+/* =================================
+   PARALLAX
+================================= */
+
+window.addEventListener(
+    "scroll",
+    () => {
+
+        const heroBg =
+            document.querySelector(
+                ".hero-bg"
+            );
+
+        const scroll =
+            window.scrollY;
+
+
+        if(
+            scroll <
+            window.innerHeight
+        ){
+
+            heroBg.style.transform =
+                `scale(1.03)
+                 translateY(${scroll * .12}px)`;
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
